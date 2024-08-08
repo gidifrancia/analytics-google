@@ -51,7 +51,7 @@
     </config-file>
     <header-file src="src/ios/CDVGoogleAnalytics.h" />
     <source-file src="src/ios/CDVGoogleAnalytics.m" />
-    <framework src="FirebaseAnalytics" type="podspec" spec=">= 4.0.0"/>
+    <framework src="FirebaseAnalytics" type="podspec" spec=">= 8.1.1"/>
     <framework src="SystemConfiguration.framework" />
     <framework src="CoreData.framework" />
     <framework src="libz.dylib" />
