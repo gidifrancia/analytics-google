@@ -44,6 +44,8 @@
   </platform>
   
   <platform name="ios">
+    <preference name="IOS_FIREBASE_MESSAGING_VERSION" default="~> 8.1.1"/>
+    
     <config-file target="config.xml" parent="/*">
       <feature name="GAPlugin">
         <param name="ios-package" value="CDVGoogleAnalytics" />
@@ -51,7 +53,17 @@
     </config-file>
     <header-file src="src/ios/CDVGoogleAnalytics.h" />
     <source-file src="src/ios/CDVGoogleAnalytics.m" />
-    <framework src="FirebaseAnalytics" type="podspec" spec=">= 8.1.1"/>
+
+    <framework src="PushKit.framework"/>
+    <podspec>
+      <config>
+        <source url="https://cdn.cocoapods.org/"/>
+      </config>
+      <pods use-frameworks="true">
+        <pod name="Firebase/Analytics" spec="$IOS_FIREBASE_MESSAGING_VERSION" />
+      </pods>
+    </podspec>
+    
     <framework src="SystemConfiguration.framework" />
     <framework src="CoreData.framework" />
     <framework src="libz.dylib" />
